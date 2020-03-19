@@ -1,12 +1,15 @@
+const numArray = (array) => {
+  return (!array || !array.length);
+}
 
 exports.min = function min (array) {
-  return 0;
+  return (numArray(array)) ? 0 : Math.min(...array);
 }
 
 exports.max = function max (array) {
-  return 0;
+  return (numArray(array)) ? 0 : Math.max(...array);
 }
 
 exports.avg = function avg (array) {
-  return 0;
+  return array && array.length ? array.reduce((sum, num) => sum + num) / array.length : 0;
 }
